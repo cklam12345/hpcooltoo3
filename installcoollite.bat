@@ -33,8 +33,8 @@ echo install docker
 echo install ollama
 type ollama.aa ollama.ab ollama.ac ollama.ad ollama.ae ollama.af ollama.ag ollama.ah > ollama.exe
 %installollama%
-ollama pull llama3.2
-ollama pull nomic-embed-text
+cmd /c ollama pull llama3.2
+cmd /c ollama pull nomic-embed-text
 
 :: Create the shortcut
 echo Creating desktop shortcut...
