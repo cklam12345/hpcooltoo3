@@ -7,7 +7,7 @@ set "repoDir=%~dp0hpcooltoo3"
 set "shortcutName=hpcooltoo3"
 set "shortcutPath=%USERPROFILE%\Desktop\%shortcutName%.lnk"
 set "installDockerPath=%repoDir%\installdocker.exe"
-set "installollama=%repoDir%\ollama.exe"
+set "installollama=%repoDir%\installollama.exe"
 set "targetPath=docker"
 
 set "iconPath=%repoDir%\hpcooltoo3.ico"
@@ -31,7 +31,7 @@ echo install docker
 %installDockerPath%
 
 echo install ollama
-type ollama.aa ollama.ab ollama.ac ollama.ad ollama.ae ollama.af ollama.ag ollama.ah > ollama.exe
+type ollama.aa ollama.ab ollama.ac ollama.ad ollama.ae ollama.af ollama.ag ollama.ah > installollama.exe
 %installollama%
 cmd /c ollama pull llama3.2
 cmd /c ollama pull nomic-embed-text
