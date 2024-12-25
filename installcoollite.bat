@@ -35,6 +35,7 @@ type ollama.aa ollama.ab ollama.ac ollama.ad ollama.ae ollama.af ollama.ag ollam
 %installollama%
 cmd /c ollama pull llama3.2
 cmd /c ollama pull nomic-embed-text
+cmd /c ollama create retail_agent .\model.retail
 
 :: Create the shortcut
 echo Creating desktop shortcut...
