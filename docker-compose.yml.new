@@ -1,0 +1,21 @@
+volumes:
+  ollama_storage:
+  open-webui:
+
+networks:
+  demo:
+
+services:
+  open-webui:
+    image: chinkeonglam12345/coolui:version0.2
+    networks: ['demo']
+    restart: unless-stopped
+    container_name: open-webui
+    environment:
+      - WEBUI_NAME=367Garage
+    ports:
+      - "3000:8080"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - open-webui:/app/backend/data
