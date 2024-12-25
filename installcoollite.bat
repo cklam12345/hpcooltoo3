@@ -2,14 +2,18 @@
 setlocal
 
 :: Define variables
-set "repoURL=https://git@github.com:cklam12345/hpcooltoo3.git"
+set "repoURL=git@github.com:cklam12345/hpcooltoo3.git"
 set "repoDir=%~dp0hpcooltoo3"
 set "shortcutName=hpcooltoo3"
 set "shortcutPath=%USERPROFILE%\Desktop\%shortcutName%.lnk"
 set "installDockerPath=%repoDir%\installdocker.exe"
-set "targetPath=%repoDir%\docker"
+set "targetPath=docker"
+
 set "iconPath=%repoDir%\hpcooltoo3.ico"
-set "runPeriod=up"  :: Default run period is 1 minute
+set "runPeriod=compose"  :: Default run period is 1 minute
+set "runPeriod2=--profile"
+set "runPeriod3=cpu"
+set "runPeriod4=up"
 
 :: Clone the repository
 echo Cloning repository...
@@ -25,10 +29,9 @@ type installdocker.aa installdocker.ab installdocker.ac installdocker.ad install
 echo install docker
 %installDockerPath%
 
-
 :: Create the shortcut
 echo Creating desktop shortcut...
-powershell -command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%shortcutPath%'); $s.TargetPath = '%targetPath%'; $s.Arguments = 'compose --profile cpu %runPeriod%'; $s.IconLocation = '%iconPath%'; $s.Save()"
+powershell -command "$ws = New-Object -ComObject WScript.Shell; $s = $ws.CreateShortcut('%shortcutPath%'); $s.WorkingDirectory = '%repoDir%'; $s.TargetPath = 'cmd.exe'; $s.Arguments = '/c cd /d %repoDir% && %targetPath% %runPeriod% %runPeriod2% %runPeriod3% %runPeriod4%'; $s.IconLocation = '%iconPath%'; $s.Save()"
 echo Installation complete. Shortcut created on Desktop.
 
 :: Reboot the machine
