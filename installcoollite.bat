@@ -33,8 +33,11 @@ echo install docker
 echo install ollama
 type ollama.aa ollama.ab ollama.ac ollama.ad ollama.ae ollama.af ollama.ag ollama.ah > installollama.exe
 %installollama%
+echo install base model
 cmd /c ollama pull llama3.2
+echo install embedding rag model
 cmd /c ollama pull nomic-embed-text
+echo install retail agent model
 cmd /c ollama create retail_agent -f .\model.retail
 
 :: Create the shortcut
