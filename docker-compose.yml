@@ -7,7 +7,7 @@ networks:
 
 services:
   open-webui:
-    image: chinkeonglam12345/coolui:version0.2
+    image: chinkeonglam12345/coolui:version0.3
     networks: ['demo']
     restart: unless-stopped
     container_name: open-webui
