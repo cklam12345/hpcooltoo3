@@ -44,6 +44,6 @@ echo Installation complete. Shortcut created on Desktop.
 
 :: Reboot the machine
 echo Rebooting the machine...
-shutdown /r /t 0
+echo shutdown /r /t 0
 
 endlocal
